@@ -63,15 +63,8 @@ public class StudentController {
 
     @ApiOperation(value = "Find by ID")
     @RequestMapping(value = "/findby/{id}", method = RequestMethod.GET)
-    public String findById(@RequestParam("id") Long id) {
-        String result = "";
-        try {
-            result = studentRepository.findOne(id).toString();
-
-        } catch (Exception e) {
-            System.out.println("User netu");
-        }
-        return result;
+    public Student findById(@RequestParam("id") Long id) {
+        return studentRepository.findOne(id);
     }
 
     @ApiOperation(value = "Find by Username")
