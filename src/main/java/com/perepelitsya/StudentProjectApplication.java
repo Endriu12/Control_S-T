@@ -21,7 +21,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @ComponentScan("com.perepelitsya")
 @EntityScan(value = "com.perepelitsya.entity")
-
 public class StudentProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(StudentProjectApplication.class, args);

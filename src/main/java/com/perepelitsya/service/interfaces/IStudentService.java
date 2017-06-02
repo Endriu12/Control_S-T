@@ -13,4 +13,5 @@ public interface IStudentService {
     void delete(long id);
     List<Student> getAll();
     String infoStudent();
+
 }

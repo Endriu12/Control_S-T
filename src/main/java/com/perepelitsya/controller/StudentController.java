@@ -17,6 +17,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/student")
+
 public class StudentController {
 
     @Autowired
@@ -67,17 +68,20 @@ public class StudentController {
         return studentRepository.findOne(id);
     }
 
+//    @ApiOperation(value = "Find by Username")
+//    @RequestMapping(value = "/findby/{username}", method = RequestMethod.GET)
+//    public String findStudentByLastName(@RequestParam("username") String username) {
+//        String result = new String();
+//        result = String.valueOf(studentRepository.findByUsername(username));
+//        return result;
+//    }
+
+
     @ApiOperation(value = "Find by Username")
-    @RequestMapping(value = "/findbyusername", method = RequestMethod.GET)
+    @RequestMapping(value = "/findby/{username}", method = RequestMethod.GET)
     public String findStudentByLastName(@RequestParam("username") String username) {
-        String result = "";
-        try {
-            for (Student st : studentRepository.findByUsername(username)) {
-                result += st.toString();
-            }
-        } catch (Exception e) {
-            System.out.println("User Empty");
-        }
+        String result = new String();
+        result = String.valueOf(studentRepository.findByUsername(username));
         return result;
     }
 

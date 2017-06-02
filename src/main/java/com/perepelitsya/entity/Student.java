@@ -38,6 +38,7 @@ public class Student {
     @Column(name = "birthDay")
     private String birthDay;
 
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "student_group_id")
     @JsonIgnore

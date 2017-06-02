@@ -4,15 +4,15 @@ import com.perepelitsya.entity.Student;
 import com.perepelitsya.repository.StudentRepository;
 import com.perepelitsya.service.interfaces.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 /**
  * Created by Andriu on 10.04.2017.
  */
-@Service
+@Service("student-service")
 public class StudentServiceImpl implements IStudentService {
 
     @Autowired
@@ -53,4 +53,5 @@ public class StudentServiceImpl implements IStudentService {
         }
         return a;
     }
+
 }
